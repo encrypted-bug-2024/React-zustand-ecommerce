@@ -58,8 +58,8 @@ export const useCartStore = create(
       removeFromCart: (product: Product) => {
         const cart = get().cart;
         const cartItem = cart.find((item) => item.id === product.id);
-        console.log(cartItem);
-        if (cartItem && cartItem?.quantity > 1) {
+        
+        if (cartItem && cartItem.quantity && cartItem.quantity > 1) {
           const updatedCart = cart.map((item) =>
             item.id === product.id
               ? { ...item, quantity: (item.quantity as number) - 1 }

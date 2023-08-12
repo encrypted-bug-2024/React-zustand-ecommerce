@@ -27,23 +27,23 @@ export default function Header() {
   const context = React.useContext(AuthContext);
 
   const [state, setState] = React.useState({
-    right: false
+    right: false,
   });
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent
-  ) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      ((event as React.KeyboardEvent).key === "Tab" ||
-        (event as React.KeyboardEvent).key === "Shift")
-    ) {
-      return;
-    }
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
 
-    setState({ ...state, [anchor]: open });
-  };
+      setState({ ...state, [anchor]: open });
+    };
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -63,11 +63,16 @@ export default function Header() {
   const navItems = [
     {
       name: (
-        <Button size="large" sx={{ color: "inherit" }}>
+        <Button
+          component={Link}
+          to={"/store"}
+          size="large"
+          sx={{ color: "inherit" }}
+        >
           Store
         </Button>
       ),
-      link: `/store`
+      link: `/store`,
     },
     {
       name: context.isAuthenticated ? (
@@ -82,12 +87,12 @@ export default function Header() {
             anchorEl={anchorEl}
             anchorOrigin={{
               vertical: "top",
-              horizontal: "right"
+              horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
               vertical: "top",
-              horizontal: "right"
+              horizontal: "right",
             }}
             open={Boolean(anchorEl)}
             onClose={handleClose}
@@ -98,13 +103,18 @@ export default function Header() {
           </Menu>
         </>
       ) : (
-        <Button size="large" sx={{ color: "inherit" }}>
+        <Button
+          component={Link}
+          to={"/login"}
+          size="large"
+          sx={{ color: "inherit" }}
+        >
           Login
         </Button>
       ),
       //link: `/login`
-      link: context.isAuthenticated ? handleMenu : `/login`
-    }
+      link: context.isAuthenticated ? handleMenu : `/login`,
+    },
   ];
 
   return (
@@ -113,7 +123,7 @@ export default function Header() {
         position="static"
         sx={{
           boxShadow: "none",
-          direction: "row"
+          direction: "row",
         }}
       >
         <Toolbar>
@@ -127,7 +137,7 @@ export default function Header() {
                 fontWeight: 700,
                 letterSpacing: ".2rem",
                 color: "inherit",
-                textDecoration: "none"
+                textDecoration: "none",
               }}
             >
               MySTORE
@@ -138,13 +148,14 @@ export default function Header() {
           <Box sx={{ display: { md: "flex" } }}>
             <Box sx={{ display: { md: "flex" }, mt: 1 }}>
               {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.link}
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  {item.name}
-                </Link>
+                // <Link
+                //   key={index}
+                //   to={item.link}
+                //   style={{ textDecoration: "none", color: "inherit" }}
+                // >
+                <>{item.name}</>
+
+                // </Link>
               ))}
               <Tooltip title={"Shopping cart"}>
                 <IconButton

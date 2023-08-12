@@ -20,9 +20,9 @@ export default function ProductDetail() {
   const { id } = useParams();
   const [index, setIndex] = useState(0);
   const addToCart = useCartStore((state) => state.addToCart);
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
 
-  const myRef = React.createRef();
+  const myRef = React.createRef<any>();
 
   const handleTab = (index: any) => {
     setIndex(index);
@@ -77,7 +77,7 @@ export default function ProductDetail() {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                mb: 2
+                mb: 2,
               }}
             >
               <Rating

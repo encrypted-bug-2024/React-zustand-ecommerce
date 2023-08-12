@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import {
   AuthContext,
   authContextDefaults,
-  AuthContextInterface
+  AuthContextInterface,
 } from "./AuthContext";
 
-export const AuthContextProvider: React.FC<React.ReactNode> = ({
-  children
-}: any) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+export const AuthContextProvider = ({ children }: IProps) => {
   const [state, setState] = useState<AuthContextInterface>(authContextDefaults);
 
   return (

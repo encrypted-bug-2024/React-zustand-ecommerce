@@ -14,8 +14,8 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   //background: Colors.light_gray,
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
   // backgroundImage: `url(/images/banner/banner.png)`,
   // backgroundRepeat: "no-repeat",
   // backgroundPosition: "center",
@@ -26,7 +26,7 @@ const BannerContent = styled(Box)(() => ({
   flexDirection: "column",
   justifyContent: "center",
   maxWidth: 420,
-  padding: "30px"
+  padding: "30px",
 }));
 
 const BannerImage = styled("img")(({ src, theme }) => ({
@@ -36,12 +36,12 @@ const BannerImage = styled("img")(({ src, theme }) => ({
   // backgroundPosition: "center",
   width: "500px",
   [theme.breakpoints.down("md")]: {
-    width: "350px"
+    width: "350px",
   },
   [theme.breakpoints.down("sm")]: {
     width: "320px",
-    height: "300px"
-  }
+    height: "300px",
+  },
 }));
 
 const BannerTitle = styled(Typography)(({ theme }) => ({
@@ -49,8 +49,8 @@ const BannerTitle = styled(Typography)(({ theme }) => ({
   fontSize: "72px",
   marginBottom: "20px",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "42px"
-  }
+    fontSize: "42px",
+  },
 }));
 
 const BannerDescription = styled(Typography)(({ theme }) => ({
@@ -60,8 +60,8 @@ const BannerDescription = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     lineHeight: 1.15,
     letterSpacing: 1.15,
-    marginBottom: "1.5em"
-  }
+    marginBottom: "1.5em",
+  },
 }));
 
 const BannerShopButton = styled(Button, {
@@ -73,8 +73,8 @@ const BannerShopButton = styled(Button, {
   overridesResolver: (props, styles) => [
     styles.root,
     props.color === "primary" && styles.primary,
-    props.color === "secondary" && styles.secondary
-  ]
+    props.color === "secondary" && styles.secondary,
+  ],
 })(({ theme }) => ({
   padding: "20px 0px",
   //color: Colors.white,
@@ -82,8 +82,8 @@ const BannerShopButton = styled(Button, {
   fontSize: "16px",
   [theme.breakpoints.down("sm")]: {
     padding: "10px 0px",
-    fontSize: "14px"
-  }
+    fontSize: "14px",
+  },
 }));
 
 export const Banner = () => {
@@ -98,7 +98,7 @@ export const Banner = () => {
         <Typography variant="h6">Huge Collection</Typography>
         <BannerTitle variant="h2">New Macbooks</BannerTitle>
 
-        <BannerDescription variant="subtitle">
+        <BannerDescription variant="subtitle1">
           Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
           tempor incididunt ut labore et dolore magna
         </BannerDescription>
