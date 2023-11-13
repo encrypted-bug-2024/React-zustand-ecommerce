@@ -11,6 +11,17 @@
         ],
         "jsx": "react-jsx",
         "useUnknownInCatchVariables": false,
-        "downlevelIteration": true
+        "downlevelIteration": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "strictNullChecks": true
     }
 }

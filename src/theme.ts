@@ -25,7 +25,7 @@ export const Colors = {
   // Solid Color
   ///////////////
   white: "#fff",
-  black: "#000"
+  black: "#000",
 };
 
 // A custom theme for this app
@@ -33,15 +33,15 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#acd5ac"
+      main: "#acd5ac",
     },
     secondary: {
-      main: "#6f323b"
+      main: "#6f323b",
     },
     error: {
-      main: red.A400
-    }
-  }
+      main: red.A400,
+    },
+  },
 });
 
 export default theme;

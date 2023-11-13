@@ -24,6 +24,8 @@ export default function ProductList({ products }: Props) {
     <Container sx={{ py: 8 }} maxWidth="lg">
       <Stack
         direction="row"
+        justifyContent="space-between"
+        alignItems="center"
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
         sx={{ mb: 4 }}
@@ -34,12 +36,21 @@ export default function ProductList({ products }: Props) {
               key={index}
               variant={filterValue === item ? "contained" : "outlined"}
               onClick={(e) => setFilterValue(item)}
+              sx={{
+                display: { xs: "none", sm: "block" }, // Display on sm and up
+              }}
             >
               {item}
             </Button>
           );
         })}
-        <Button variant="outlined" onClick={(e) => setFilterValue("")}>
+        <Button
+          variant="outlined"
+          onClick={(e) => setFilterValue("")}
+          sx={{
+            display: { xs: "none", sm: "block" }, // Display on xs only
+          }}
+        >
           RESET FILTER
         </Button>
       </Stack>

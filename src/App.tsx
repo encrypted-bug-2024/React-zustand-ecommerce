@@ -27,9 +27,8 @@ export default function App() {
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        console.log(mode);
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      }
+      },
     }),
     []
   );
@@ -38,8 +37,8 @@ export default function App() {
     () =>
       createTheme({
         palette: {
-          mode
-        }
+          mode,
+        },
       }),
     [mode]
   );

@@ -124,14 +124,47 @@ export default function Header() {
         sx={{
           boxShadow: "none",
           direction: "row",
+          flexDirection: "column",
         }}
       >
         <Toolbar>
-          <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+          <Box
+            component={Link}
+            to={"/"}
+            sx={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="mystore.png"
+              alt="Logo"
+              height="100"
+              style={{ marginRight: "10px", height: "40px" }}
+            />
             <Typography
               variant="h4"
               noWrap
               sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".2rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              MySTORE
+            </Typography>
+          </Box>
+
+          {/* <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+            <Typography
+              variant="h4"
+              noWrap
+              sx={{
+                flexGrow: 1,
                 mr: 2,
                 fontFamily: "monospace",
                 fontWeight: 700,
@@ -142,7 +175,7 @@ export default function Header() {
             >
               MySTORE
             </Typography>
-          </Link>
+          </Link> */}
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { md: "flex" } }}>
