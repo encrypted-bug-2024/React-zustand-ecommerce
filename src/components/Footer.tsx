@@ -9,7 +9,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {"Made with love "}
       <Link color="inherit" href="https://github.com/Shoebtamboli">
-        Shoeb Tamboli
+        code crumble
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}

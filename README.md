@@ -21,12 +21,12 @@ This is an e-commerce application built using React.js, Zustand (a state managem
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/react-zustand-ecommerce.git
+git clone https://github.com/code-crumble/react-zustand-ecommerce.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd react-mui-netflix-clone
+cd react-zustand-ecommerce
 ```
 
 3. Install dependencies:
